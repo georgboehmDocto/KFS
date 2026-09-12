@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KFS — Korean Firing Sport, rules of play</title>
+<meta name="description" content="The complete rules of KFS, Korean Firing Sport: a two-table, six-cup throwing game invented in Korea.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&family=IBM+Plex+Sans+KR:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F2F3F0;
+  --ink:#000;
+  --muted:#5C615D;
+  --rule:rgba(0,0,0,.18);
+  --red:#CD313A;
+  --blue:#0047A0;
+  --ochre:#8A6B1F;
+  --pine:#3F6E52;
+  --serif:"Nanum Myeongjo",Georgia,serif;
+  --sans:"IBM Plex Sans KR",system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font:400 17px/1.7 var(--sans);
+}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+
+/* ---------- hero ---------- */
+header{padding:46px 0 8px;position:relative}
+.mark{display:flex;align-items:flex-start;gap:18px}
+h1{
+  font:400 clamp(3.1rem,12vw,6.4rem)/0.86 var(--serif);
+  margin:0;letter-spacing:-.02em;
+}
+.sub{font:400 clamp(1rem,3.4vw,1.25rem)/1.4 var(--serif);margin:.6rem 0 0;color:var(--ink)}
+.sub2{font:400 .92rem/1.4 var(--sans);margin:.25rem 0 0;color:var(--muted)}
+.lede{max-width:52ch;margin:1.4rem 0 0;font-size:1.0625rem}
+.lede em{font-style:normal;border-bottom:1px solid var(--rule)}
+.emblem{flex:0 0 auto;margin-top:12px}
+figure.hero{margin:26px 0 0}
+
+/* ---------- layout ---------- */
+.cols{display:block;padding:34px 0 0}
+nav.toc{border-top:1px solid var(--ink);padding-top:14px;margin:0 0 40px}
+nav.toc h2{font:500 .82rem/1 var(--sans);margin:0 0 12px;color:var(--muted)}
+nav.toc ol{list-style:none;margin:0;padding:0;font-size:.95rem}
+nav.toc li{margin:0 0 7px}
+nav.toc a{color:var(--ink);text-decoration:none;border-bottom:1px solid transparent}
+nav.toc a:hover,nav.toc a:focus-visible{border-bottom-color:var(--red)}
+nav.toc .no{color:var(--red);font-variant-numeric:tabular-nums;margin-right:.5em}
+
+main{max-width:64ch}
+section{padding:38px 0 4px;border-top:1px solid var(--rule)}
+section:first-of-type{border-top:1px solid var(--ink)}
+h2.art{margin:0 0 22px}
+h2.art .no{
+  display:block;font:500 .8rem/1 var(--sans);color:var(--red);
+  margin-bottom:.6rem;
+}
+h2.art .ti{font:400 clamp(1.55rem,5vw,2.05rem)/1.15 var(--serif);display:block;letter-spacing:-.01em}
+h3{font:400 1.06rem/1.4 var(--serif);margin:30px 0 10px}
+
+.r{display:grid;grid-template-columns:3.4rem 1fr;gap:0 .4rem;margin:0 0 14px}
+.r>.n{font-variant-numeric:tabular-nums;font-size:.9rem;color:var(--muted);padding-top:.28rem}
+.r>p{margin:0}
+.r.pen>.n{color:var(--red)}
+p{margin:0 0 14px}
+a{color:var(--ink);text-decoration-color:var(--red);text-underline-offset:3px}
+
+dl.kit{display:grid;grid-template-columns:9.5rem 1fr;margin:0 0 28px;font-size:.97rem}
+dl.kit dt{color:var(--muted);padding:.45rem 0;border-top:1px solid var(--rule)}
+dl.kit dd{margin:0;padding:.45rem 0;border-top:1px solid var(--rule)}
+
+.ko{font-family:var(--serif)}
+.say{font-family:var(--serif);font-size:1.15rem}
+
+/* open questions */
+.open{border-left:2px solid var(--red);padding:2px 0 2px 16px;margin:18px 0 22px}
+.open .tag{font:500 .78rem/1 var(--sans);color:var(--red);display:block;margin-bottom:.45rem}
+.open p{margin:0;font-size:.95rem}
+ol.reg{list-style:none;counter-reset:q;margin:0;padding:0}
+ol.reg li{counter-increment:q;display:grid;grid-template-columns:2.6rem 1fr;border-top:1px solid var(--rule);padding:14px 0}
+ol.reg li:before{content:"Q" counter(q);color:var(--red);font-size:.85rem;font-variant-numeric:tabular-nums}
+ol.reg p{margin:0;font-size:.97rem}
+ol.reg .ref{color:var(--muted);font-size:.85rem}
+
+/* figures */
+figure{margin:26px 0 30px}
+figure svg{display:block;width:100%;height:auto;overflow:visible}
+figcaption{
+  margin-top:12px;padding-top:9px;border-top:1px solid var(--rule);
+  font-size:.86rem;line-height:1.55;color:var(--muted);max-width:62ch;
+}
+figcaption b{font-weight:500;color:var(--ink)}
+
+footer{border-top:1px solid var(--ink);margin-top:56px;padding:26px 0 70px;font-size:.88rem;color:var(--muted)}
+footer .fl{display:flex;gap:20px;align-items:flex-start;justify-content:space-between}
+
+/* ---------- svg drawing styles ---------- */
+.ln{fill:none;stroke:var(--ink);stroke-width:1.4;stroke-linejoin:round;stroke-linecap:round}
+.ln.thin{stroke-width:1}
+.hair{fill:none;stroke:var(--rule);stroke-width:1}
+.dash{fill:none;stroke:var(--ink);stroke-width:1.4;stroke-dasharray:7 5}
+.bad{fill:none;stroke:var(--red);stroke-width:1.5;stroke-dasharray:2 5;stroke-linecap:round}
+.dot{fill:none;stroke:var(--ink);stroke-width:1.4;stroke-dasharray:2 5;stroke-linecap:round}
+.p-o{stroke:var(--ochre)}
+.p-p{stroke:var(--pine)}
+.t-k{font:500 11.5px var(--sans);fill:var(--ink)}
+.t-o{font:500 11.5px var(--sans);fill:var(--ochre)}
+.t-p{font:500 11.5px var(--sans);fill:var(--pine)}
+.red{fill:none;stroke:var(--red);stroke-width:1.5}
+.redf{fill:var(--red)}
+.wfill{fill:rgba(0,71,160,.15);stroke:none}
+.wline{fill:none;stroke:var(--blue);stroke-width:1.4}
+.blu{fill:none;stroke:var(--blue);stroke-width:1.5}
+.ghost{fill:none;stroke:var(--ink);stroke-width:1;stroke-dasharray:3 4;opacity:.5}
+.lbl{font:400 13px var(--sans);fill:var(--ink)}
+.sm{font:400 11.5px var(--sans);fill:var(--muted)}
+.smr{font:500 11.5px var(--sans);fill:var(--red)}
+.smb{font:500 11.5px var(--sans);fill:var(--blue)}
+.mid{text-anchor:middle}
+.end{text-anchor:end}
+.arc{fill:none;stroke:var(--ink);stroke-width:1.6}
+.arc.anim{stroke-dasharray:820;stroke-dashoffset:820;animation:draw 2.2s .35s ease-out forwards}
+.ballmv{
+  fill:none;stroke:var(--ink);stroke-width:9;stroke-linecap:round;
+  stroke-dasharray:.1 1800;animation:fly 5.4s .35s linear infinite;opacity:0
+}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fly{
+  0%{stroke-dashoffset:0;opacity:0}
+  1%{stroke-dashoffset:0;opacity:1}
+  38%{stroke-dashoffset:-800;opacity:1}
+  41%{stroke-dashoffset:-800;opacity:0}
+  100%{stroke-dashoffset:-800;opacity:0}
+}
+@media (prefers-reduced-motion:reduce){
+  .arc.anim{stroke-dashoffset:0;animation:none}
+  .ballmv{display:none}
+}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+
+@media (min-width:900px){
+  .cols{display:grid;grid-template-columns:210px 1fr;gap:0 64px;align-items:start}
+  nav.toc{position:sticky;top:28px;margin:0}
+  main{max-width:none}
+  section{padding:44px 0 6px}
+}
+@media (max-width:520px){
+  body{font-size:16px}
+  .r{grid-template-columns:2.9rem 1fr}
+  dl.kit{grid-template-columns:7.5rem 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== reusable glyphs ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+  <g id="cup">
+    <path class="ln" d="M0 0 L4 -26 L26 -26 L30 0 Z"/>
+    <path class="ln thin" d="M5.4 -22 L24.6 -22" opacity=".4"/>
+  </g>
+  <g id="pyr6">
+    <use href="#cup" x="0" y="0"/><use href="#cup" x="30" y="0"/><use href="#cup" x="60" y="0"/>
+    <use href="#cup" x="15" y="-26"/><use href="#cup" x="45" y="-26"/>
+    <use href="#cup" x="30" y="-52"/>
+  </g>
+  <g id="pyr3">
+    <use href="#cup" x="0" y="0"/><use href="#cup" x="30" y="0"/>
+    <use href="#cup" x="15" y="-26"/>
+  </g>
+  <g id="wcup">
+    <path class="wfill" d="M1 -3 L21 -3 L24.6 -27 L-2.6 -27 Z"/>
+    <path class="ln" d="M0 0 L22 0 L26 -30 L-4 -30 Z"/>
+    <path class="wline" d="M-2.6 -27 L24.6 -27"/>
+  </g>
+  <g id="playerR">
+    <circle class="ln" cx="0" cy="-92" r="11"/>
+    <path class="ln" d="M0 -81 L0 -42 L26 -42 M26 -42 L26 0"/>
+  </g>
+  <g id="playerL">
+    <circle class="ln" cx="0" cy="-92" r="11"/>
+    <path class="ln" d="M0 -81 L0 -42 L-26 -42 M-26 -42 L-26 0"/>
+  </g>
+  <g id="headtop">
+    <circle class="ln" cx="0" cy="0" r="11"/>
+    <path class="ln" d="M-15 15 A 18 18 0 0 1 15 15"/>
+  </g>
+  <g id="racket">
+    <ellipse class="ln" cx="0" cy="0" rx="13" ry="18"/>
+    <path class="ln" d="M0 18 L0 38"/>
+    <path class="ln thin" d="M-8 -7 L8 -7 M-10 0 L10 0 M-8 7 L8 7" opacity=".35"/>
+  </g>
+  <g id="cupX">
+    <path class="ghost" d="M0 0 L4 -26 L26 -26 L30 0 Z"/>
+  </g>
+  <g id="minicup">
+    <path class="ln" d="M0 0 L2.5 -15 L15.5 -15 L18 0 Z"/>
+  </g>
+  <g id="minicupX">
+    <path class="ghost" d="M0 0 L2.5 -15 L15.5 -15 L18 0 Z"/>
+  </g>
+  <g id="taegeuk">
+    <g transform="translate(32,32) rotate(-35)">
+      <path fill="var(--red)" d="M-24 0 A24 24 0 0 1 24 0 A12 12 0 0 1 0 0 A12 12 0 0 0 -24 0 Z"/>
+      <path fill="var(--blue)" d="M24 0 A24 24 0 0 1 -24 0 A12 12 0 0 1 0 0 A12 12 0 0 0 24 0 Z"/>
+      <circle class="ln thin" r="24"/>
+    </g>
+  </g>
+  <!-- cross-section scene: two tables, gap, both pyramids, both water cups -->
+  <g id="scene">
+    <!-- left table -->
+    <path class="ln" d="M90 170 L390 170 L390 178 L90 178 Z"/>
+    <path class="ln" d="M100 178 L100 240 M372 178 L372 240"/>
+    <!-- right table -->
+    <path class="ln" d="M422 170 L722 170 L722 178 L422 178 Z"/>
+    <path class="ln" d="M440 178 L440 240 M712 178 L712 240"/>
+    <!-- floor -->
+    <path class="hair" d="M40 240 L770 240"/>
+    <!-- pyramids at the outer edges -->
+    <use href="#pyr6" x="92" y="170"/>
+    <use href="#pyr6" x="630" y="170"/>
+    <!-- water cups on the gap side of each pyramid -->
+    <use href="#wcup" x="190" y="170"/>
+    <use href="#wcup" x="600" y="170"/>
+    <!-- players -->
+    <use href="#playerR" x="52" y="240"/>
+    <use href="#playerL" x="762" y="240"/>
+  </g>
+</defs></svg>
+
+<div class="wrap">
+
+<header>
+  <div class="mark">
+    <div>
+      <h1>KFS</h1>
+      <p class="sub">Korean Firing Sport</p>
+      <p class="sub2">Rules of play</p>
+    </div>
+    <svg class="emblem" width="58" height="58" viewBox="0 0 64 64" role="img" aria-label="Taegeuk"><use href="#taegeuk"/></svg>
+  </div>
+
+  <p class="lede">Two teams of two. Two tables with 30–40 centimetres between them. Six cups a side, stacked at the edge each team sits behind. Bounce a ping-pong ball off your own table, then off theirs, and take their pyramid down.</p>
+
+  <figure class="hero">
+    <svg viewBox="0 -40 800 300" role="img" aria-label="Cross-section of the two tables. A ball is thrown from behind the left pyramid, bounces once on the left table, once on the right table, and hits the right pyramid.">
+      <use href="#scene"/>
+      <path class="arc anim" d="M50 62 Q150 10 250 170 Q380 5 520 170 Q570 100 644 124"/>
+      <path class="ballmv" d="M50 62 Q150 10 250 170 Q380 5 520 170 Q570 100 644 124"/>
+      <g>
+        <circle cx="250" cy="170" r="10" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.2"/>
+        <text x="250" y="174.5" class="mid sm" style="fill:var(--ink)">1</text>
+        <circle cx="520" cy="170" r="10" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.2"/>
+        <text x="520" y="174.5" class="mid sm" style="fill:var(--ink)">2</text>
+        <path class="hair" d="M672 64 L654 92"/>
+        <circle cx="675" cy="52" r="10" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.2"/>
+        <text x="675" y="56.5" class="mid sm" style="fill:var(--ink)">3</text>
+      </g>
+      <text x="250" y="204" class="mid sm">your table</text>
+      <text x="520" y="204" class="mid sm">their table</text>
+      <text x="675" y="30" class="mid sm">their cups</text>
+      <path class="hair" d="M390 196 L390 214 M422 196 L422 214 M390 205 L422 205"/>
+      <text x="406" y="230" class="mid sm">30–40 cm</text>
+    </svg>
+    <figcaption>The clean throw, seen end-on. Each team's pyramid stands at the outer edge of its own table, with the players seated behind it, so a ball has the whole width of the far table to bounce on before it reaches the cups. The <b>water cup</b> sits on the gap side of the pyramid, right where a short bounce lands.</figcaption>
+  </figure>
+</header>
+
+<div class="cols">
+
+  <nav class="toc" aria-label="Contents">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#a1"><span class="no">1</span>Table, cups, kit</a></li>
+      <li><a href="#a2"><span class="no">2</span>Starting a game</a></li>
+      <li><a href="#a3"><span class="no">3</span>Throwing</a></li>
+      <li><a href="#a4"><span class="no">4</span>Blocking</a></li>
+      <li><a href="#a5"><span class="no">5</span>Fouls</a></li>
+      <li><a href="#a6"><span class="no">6</span>Tennis ball, water cup</a></li>
+      <li><a href="#a7"><span class="no">7</span>Three cups or fewer</a></li>
+      <li><a href="#a8"><span class="no">8</span>Winning: the last stand</a></li>
+      <li><a href="#a9"><span class="no">9</span>The ref</a></li>
+      <li><a href="#a10"><span class="no">10</span>Respect</a></li>
+    </ol>
+  </nav>
+
+  <main>
+
+  <!-- ========== 1 ========== -->
+  <section id="a1">
+    <h2 class="art"><span class="no">Article 1</span><span class="ti">Table, cups, kit</span></h2>
+
+    <dl class="kit">
+      <dt>Players</dt><dd>Two teams of two</dd>
+      <dt>Cups</dt><dd>Six per team, plus one water cup</dd>
+      <dt>Balls</dt><dd>Two ping-pong balls per turn; one tennis ball, thrown as a reward</dd>
+      <dt>Gear</dt><dd>One badminton racket per team; one toy gun</dd>
+      <dt>Officials</dt><dd>One ref, who is not playing</dd>
+    </dl>
+
+    <div class="r"><span class="n">1.1</span><p>Two long tables of the same height stand with their long sides parallel, separated by a gap of 30–40 cm.</p></div>
+    <div class="r"><span class="n">1.2</span><p>Each team owns one table and sits at its outer long edge, facing the gap and the other team.</p></div>
+    <div class="r"><span class="n">1.3</span><p>Each team stacks exactly six cups upside down at the edge of its own table, directly in front of where it sits: three cups side by side as level 1, two resting in the grooves as level 2, one on top as level 3.</p></div>
+    <div class="r"><span class="n">1.4</span><p>Each team fills one further cup with water, almost to the brim, and stands it upright on the gap side of the pyramid, touching the middle cup of level 1. This is the <b>water cup</b> (<a href="#a6">Article 6</a>).</p></div>
+    <div class="r"><span class="n">1.5</span><p>Both players sit immediately behind their own pyramid, on chairs or a bench.</p></div>
+    <div class="r"><span class="n">1.6</span><p>Each team receives exactly one badminton racket at the start of the game.</p></div>
+    <div class="r"><span class="n">1.7</span><p>One person who is not playing acts as ref (<a href="#a9">Article 9</a>) and holds the toy gun.</p></div>
+
+    <figure>
+      <svg viewBox="0 0 800 470" role="img" aria-label="Top-down view of the setup: two long tables side by side with a narrow gap, each with a row of three cups at its outer edge, a water cup in front of the middle one, two seated players behind, a racket on the table, and a ref standing to one side.">
+        <!-- tables -->
+        <rect class="ln" x="140" y="70" width="520" height="130"/>
+        <rect class="ln" x="140" y="240" width="520" height="130"/>
+        <!-- gap dimension -->
+        <path class="hair" d="M690 200 L690 240 M684 200 L696 200 M684 240 L696 240"/>
+        <text x="704" y="224" class="sm">30–40 cm</text>
+        <!-- team A cups (base row seen from above) -->
+        <g>
+          <circle class="ln" cx="360" cy="92" r="20"/><circle class="ln thin" cx="360" cy="92" r="13" opacity=".45"/>
+          <circle class="ln" cx="400" cy="92" r="20"/><circle class="ln thin" cx="400" cy="92" r="13" opacity=".45"/>
+          <circle class="ln" cx="440" cy="92" r="20"/><circle class="ln thin" cx="440" cy="92" r="13" opacity=".45"/>
+          <circle class="ln" cx="400" cy="130" r="18"/><circle cx="400" cy="130" r="18" class="wfill"/><circle class="wline" cx="400" cy="130" r="14"/>
+        </g>
+        <text x="490" y="88" class="sm">level 1, three cups</text>
+        <text x="490" y="104" class="sm">(levels 2 and 3 sit above)</text>
+        <text x="437" y="152" class="smb">water cup</text>
+        <!-- team A players + racket -->
+        <use href="#headtop" x="352" y="34"/>
+        <use href="#headtop" x="448" y="34"/>
+        <use href="#racket" x="230" y="120"/>
+        <text x="150" y="52" class="lbl">Team A</text>
+        <!-- team B cups -->
+        <g>
+          <circle class="ln" cx="360" cy="348" r="20"/><circle class="ln thin" cx="360" cy="348" r="13" opacity=".45"/>
+          <circle class="ln" cx="400" cy="348" r="20"/><circle class="ln thin" cx="400" cy="348" r="13" opacity=".45"/>
+          <circle class="ln" cx="440" cy="348" r="20"/><circle class="ln thin" cx="440" cy="348" r="13" opacity=".45"/>
+          <circle class="ln" cx="400" cy="310" r="18"/><circle cx="400" cy="310" r="18" class="wfill"/><circle class="wline" cx="400" cy="310" r="14"/>
+        </g>
+        <use href="#headtop" x="352" y="406"/>
+        <use href="#headtop" x="448" y="406"/>
+        <use href="#racket" x="230" y="320"/>
+        <text x="150" y="404" class="lbl">Team B</text>
+        <!-- ref -->
+        <use href="#headtop" x="752" y="300"/>
+        <text x="752" y="342" class="mid sm">ref</text>
+        <!-- throwing direction -->
+        <path class="hair" d="M200 250 L200 190"/>
+        <path class="redf" d="M200 182 l5 10 l-10 0 Z" opacity=".8"/>
+        <text x="212" y="230" class="sm">balls travel this way</text>
+      </svg>
+      <figcaption>Seen from above. The cups are at the edge each team sits behind, so an incoming ball crosses the whole table before it arrives. Only the three cups of level 1 are visible from this angle.</figcaption>
+    </figure>
+
+    <figure>
+      <svg viewBox="0 0 800 300" role="img" aria-label="Left: the six-cup pyramid in front view, with levels one, two and three labelled. Right: plan view showing the water cup touching the middle cup of level one on the gap side.">
+        <!-- panel A: elevation -->
+        <path class="ln" d="M150 250 L350 250"/>
+        <use href="#pyr6" x="200" y="250"/>
+        <path class="hair" d="M196 237 L120 237 M196 211 L120 211 M196 185 L120 185"/>
+        <text x="114" y="241" class="end sm">level 1 — three cups</text>
+        <text x="114" y="215" class="end sm">level 2 — two cups</text>
+        <text x="114" y="189" class="end sm">level 3 — one cup</text>
+        <text x="250" y="278" class="mid sm">front view, all cups upside down</text>
+        <!-- panel B: plan -->
+        <path class="ln" d="M440 160 L760 160"/>
+        <text x="600" y="150" class="mid sm">table edge — the team sits beyond this line</text>
+        <circle class="ln" cx="560" cy="182" r="20"/>
+        <circle class="ln" cx="600" cy="182" r="20"/>
+        <circle class="ln" cx="640" cy="182" r="20"/>
+        <circle class="ln" cx="600" cy="220" r="18"/><circle cx="600" cy="220" r="18" class="wfill"/><circle class="wline" cx="600" cy="220" r="14"/>
+        <path class="hair" d="M600 282 L600 246"/>
+        <path class="redf" d="M600 240 l5 10 l-10 0 Z" opacity=".8"/>
+        <text x="600" y="296" class="mid sm">balls arrive from here</text>
+        <text x="668" y="226" class="smb">touching</text>
+      </svg>
+      <figcaption>The water cup stands upright and nearly full, touching the middle cup of level 1 on the side the balls come from. It is the first thing a short bounce meets.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ========== 2 ========== -->
+  <section id="a2">
+    <h2 class="art"><span class="no">Article 2</span><span class="ti">Starting a game</span></h2>
+    <div class="r"><span class="n">2.1</span><p>Before anything else, the two teams meet, shake hands, bow, and say <span class="say" lang="ko">안녕하세요</span> — <i>annyeonghaseyo</i>, hello.</p></div>
+    <div class="r"><span class="n">2.2</span><p>Each team then offers the first turn to the other. Handing over the opening throws is the first show of respect in a game built on it, and refusing to back down from that offer is the stronger move. Whichever team accepts throws first.</p></div>
+    <div class="r"><span class="n">2.3</span><p>Both teams return behind their pyramids. When both are ready, the ref counts down in Korean — <span class="say" lang="ko">셋, 둘, 하나</span> (<i>set, dul, hana</i>) — and fires the toy gun. The game is live on the shot.</p></div>
+    <div class="r"><span class="n">2.4</span><p>The team throwing first may release on the gunshot itself. That is not disrespectful and may not be treated as such.</p></div>
+    <div class="r"><span class="n">2.5</span><p>Opening the game with a direct throw (3.5), after being handed the first turn, is bad manners. It is not disrespect under <a href="#a10">Article 10</a> and no foul may be called for it. It is simply remembered.</p></div>
+  </section>
+
+  <!-- ========== 3 ========== -->
+  <section id="a3">
+    <h2 class="art"><span class="no">Article 3</span><span class="ti">Throwing</span></h2>
+    <div class="r"><span class="n">3.1</span><p>Teams throw in alternating turns. A turn is two ping-pong balls.</p></div>
+    <div class="r"><span class="n">3.2</span><p>The balls may be thrown at the same time or one after the other, and both may be thrown by the same player. Over a game, the throws should even out between the two players of a team.</p></div>
+
+    <h3>Clean throws and blockable throws</h3>
+    <p>No throw in KFS is forbidden. The only question a throw answers is whether the other team is allowed to touch it.</p>
+    <div class="r"><span class="n">3.3</span><p>A throw is <b>clean</b> if it bounces exactly once on the thrower's own table, then exactly once on the opponent's table, and then either reaches the cups or leaves the far table over a side or the back edge. Nothing that happens after the second bounce makes a throw unclean. A ball in the gap is never clean (5.2).</p></div>
+    <div class="r"><span class="n">3.4</span><p>Every other throw is <b>blockable</b>: a missing bounce, an extra bounce, a ball thrown straight at the pyramid. Throwing one is not an offence and carries no penalty. It can simply be slapped out of the air (<a href="#a4">Article 4</a>).</p></div>
+    <div class="r"><span class="n">3.5</span><p>The <b>direct throw</b> — straight at the pyramid, no bounce at all — is a standard tactic among experienced teams, and blockable like any other.</p></div>
+    <div class="r"><span class="n">3.6</span><p>Two direct throws may never be released at the same time, whether one from each player or both from the same player. That is foul play (5.8). Direct throws arrive one at a time so that they can always be answered — the game rewards a defender's reaction, not two balls at once and an argument with the ref. A direct throw released at the same moment as a clean throw is fine, and sometimes the right move — though doing it turn after turn is disrespect, and the ref may treat it as such.</p></div>
+
+    <h3>Cups that go over</h3>
+    <div class="r"><span class="n">3.7</span><p>Cups count however they were knocked over, by a clean throw or a blockable one.</p></div>
+    <div class="r"><span class="n">3.8</span><p>Every cup knocked over is removed from the table immediately, and it makes no difference who knocked it over. A team's own cups count against it however they fall — a throw, a block, an elbow, a shoved table. Cups are never put back except under 5.8 and 8.4.</p></div>
+    <div class="r"><span class="n">3.9</span><p>If a knocked cup comes to rest on top of another cup, both cups count as knocked over and both are removed.</p></div>
+    <div class="r"><span class="n">3.10</span><p>A ball that arrives and knocks nothing over has no effect. The turn ends once the team's second ball has been thrown and come to rest.</p></div>
+
+    <figure>
+      <svg viewBox="0 -40 800 300" role="img" aria-label="Cross-section showing three throws: a clean throw that bounces on both tables and flies off over the far back edge, a direct throw with no bounce, and a throw that bounces twice on the thrower's own table.">
+        <use href="#scene"/>
+        <path class="arc" d="M50 62 Q150 10 250 170 Q380 5 520 170 Q620 20 744 54"/>
+        <text x="690" y="26" class="mid t-k">clean, and gone</text>
+        <path class="dash p-o" d="M54 92 Q340 52 644 124"/>
+        <text x="330" y="48" class="mid t-o">direct throw — blockable</text>
+        <path class="dot p-p" d="M50 120 Q110 84 170 170 Q230 104 290 170 Q410 70 530 170"/>
+        <text x="290" y="196" class="mid t-p">two bounces on your own table — blockable</text>
+      </svg>
+      <figcaption>A clean throw stays clean even when it misses everything and sails off the far side — the defenders still may not touch it. The direct throw and the double bounce are both perfectly permitted; they just hand the other team the right to slap them away.</figcaption>
+    </figure>
+
+    <figure>
+      <svg viewBox="0 0 800 240" role="img" aria-label="Before and after: a knocked cup resting on top of another cup, then both cups removed.">
+        <path class="ln" d="M120 190 L360 190"/>
+        <use href="#cup" x="170" y="190"/>
+        <use href="#cup" x="230" y="190"/>
+        <g transform="translate(170,190) rotate(-8)"><use href="#cup" x="0" y="-26"/></g>
+        <text x="240" y="218" class="mid sm">a cup comes to rest on another</text>
+        <path class="hair" d="M400 160 L440 160"/>
+        <path class="redf" d="M446 160 l-10 5 l0 -10 Z"/>
+        <path class="ln" d="M480 190 L720 190"/>
+        <use href="#cupX" x="530" y="190"/>
+        <g transform="translate(530,190) rotate(-8)"><use href="#cupX" x="0" y="-26"/></g>
+        <use href="#cup" x="590" y="190"/>
+        <g class="red"><path d="M535 187 L555 167 M535 167 L555 187"/><path d="M531 161 L551 141 M531 141 L551 161"/></g>
+        <text x="600" y="218" class="mid sm">both of them go</text>
+      </svg>
+      <figcaption>Stacking rule. It does not matter whether the cup underneath was touched: if the two end up stacked, both leave the table.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ========== 4 ========== -->
+  <section id="a4">
+    <h2 class="art"><span class="no">Article 4</span><span class="ti">Blocking</span></h2>
+    <div class="r"><span class="n">4.1</span><p>The team being thrown at may slap away any blockable throw (3.4), with a bare hand or with its racket.</p></div>
+    <div class="r"><span class="n">4.2</span><p>The block has to be immediate, while the ball is in flight. Once a ball has connected with a cup it cannot be blocked.</p></div>
+    <div class="r pen"><span class="n">4.3</span><p>Slapping away a clean throw is a foul (<a href="#a5">Article 5</a>). Reading the bounces correctly, in the moment, is the defender's whole job.</p></div>
+    <div class="r"><span class="n">4.4</span><p>Any of its own cups the defending team knocks over while blocking — with hand, racket, arm or body — counts as knocked over and is removed at once, under the general rule of 3.8. The stacking rule of 3.9 applies to those cups too.</p></div>
+    <div class="r pen"><span class="n">4.5</span><p>Slapping a ball into the gap is a foul, whatever kind of throw it was (5.3).</p></div>
+  </section>
+
+  <!-- ========== 5 ========== -->
+  <section id="a5">
+    <h2 class="art"><span class="no">Article 5</span><span class="ti">Fouls</span></h2>
+    <div class="r"><span class="n">5.1</span><p>Every foul has the same consequence: the other team gets one throw with the tennis ball (<a href="#a6">Article 6</a>). There is no other penalty in the game.</p></div>
+    <p>A foul is always charged to one team and awarded to the other. The general rule for the gap: whoever put the ball in it is at fault.</p>
+    <div class="r pen"><span class="n">5.2</span><p>The throwing team puts a ball in the gap between the tables: foul, awarded to the defending team.</p></div>
+    <div class="r pen"><span class="n">5.3</span><p>The defending team slaps a ball into the gap: foul, awarded to the throwing team.</p></div>
+    <div class="r pen"><span class="n">5.4</span><p>The defending team blocks a clean throw (4.3): foul, awarded to the throwing team.</p></div>
+    <div class="r pen"><span class="n">5.5</span><p>A tennis ball put into the gap: foul, and the other team gets the tennis throw instead (6.3).</p></div>
+    <div class="r pen"><span class="n">5.6</span><p>The ref may call a foul on any illegal play. This is meant to be the exception, not the norm.</p></div>
+    <div class="r pen"><span class="n">5.7</span><p>Repeated disrespect toward the other team is a foul like any other (<a href="#a10">Article 10</a>).</p></div>
+    <div class="r pen"><span class="n">5.8</span><p>Two direct throws released at the same time, from either or both players (3.6): foul, awarded to the defending team, and any cups those two balls knocked over are restored.</p></div>
+
+    <figure>
+      <svg viewBox="0 0 800 230" role="img" aria-label="Close-up of the gap between the two tables with a ball falling into it, from the throwing side and from the defending side.">
+        <path class="ln" d="M120 120 L380 120 L380 128 L120 128 Z"/>
+        <path class="ln" d="M360 128 L360 190"/>
+        <path class="ln" d="M420 120 L680 120 L680 128 L420 128 Z"/>
+        <path class="ln" d="M440 128 L440 190"/>
+        <path class="hair" d="M380 96 L380 74 M420 96 L420 74 M380 85 L420 85"/>
+        <text x="400" y="64" class="mid sm">30–40 cm</text>
+        <path class="bad" d="M150 64 Q290 24 392 118"/>
+        <path class="bad" d="M650 64 Q520 24 408 118"/>
+        <circle cx="400" cy="150" r="9" class="red"/>
+        <text x="150" y="180" class="sm">thrown in by the thrower</text>
+        <text x="150" y="196" class="smr">→ tennis throw to the defenders</text>
+        <text x="650" y="180" class="end sm">slapped in by the defender</text>
+        <text x="650" y="196" class="end smr">→ tennis throw to the throwers</text>
+      </svg>
+      <figcaption>The gap punishes both sides equally. It is also why the tables are set close: at 30–40 cm there is not much room for a ball to fall through.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ========== 6 ========== -->
+  <section id="a6">
+    <h2 class="art"><span class="no">Article 6</span><span class="ti">Tennis ball and water cup</span></h2>
+    <p>There is one reward in KFS and it is the tennis ball. A team earns a throw with it two ways: by being fouled (<a href="#a5">5.1</a>), or by putting a ping-pong ball in the other team's water cup.</p>
+
+    <h3>The tennis throw</h3>
+    <div class="r"><span class="n">6.1</span><p>The tennis throw is taken immediately, the moment it is earned — in the middle of a turn, in the middle of a last stand, whenever. The ball may then be thrown however the team likes: bounces, direct, overarm, along the table. 3.3 does not apply to it.</p></div>
+    <div class="r"><span class="n">6.2</span><p>The tennis ball cannot be blocked by anyone, by hand or by racket.</p></div>
+    <div class="r pen"><span class="n">6.3</span><p>If the tennis ball goes into the gap, that is a foul, and the other team gets the tennis throw instead.</p></div>
+    <div class="r"><span class="n">6.4</span><p>Cups the tennis ball knocks over count as usual, including the stacking rule of 3.9. It is a tennis ball hitting a wall of plastic cups, so expect it to be decisive.</p></div>
+
+    <h3>The water cup</h3>
+    <p>Some teams play as if the water cup were decoration. It is the fastest way to lose.</p>
+    <div class="r"><span class="n">6.5</span><p>A ping-pong ball that lands in the opponent's water cup earns the throwing team a tennis throw.</p></div>
+    <div class="r"><span class="n">6.6</span><p>If a team lands a ball in its <i>own</i> water cup, or slaps a blockable throw into its own water cup while defending, it counts as though the opponent had made the cup: the opponent gets the tennis throw.</p></div>
+    <div class="r"><span class="n">6.7</span><p>However a water cup is made, it goes straight back to the same spot, refilled. The table is wiped so that balls still bounce true.</p></div>
+    <div class="r"><span class="n">6.8</span><p>There is no limit to how often a water cup can be made in one game.</p></div>
+
+    <figure>
+      <svg viewBox="0 0 800 230" role="img" aria-label="Left: a ball landing in the water cup. Right: the tennis throw, with a racket crossed out to show it cannot be blocked.">
+        <path class="ln" d="M110 170 L330 170"/>
+        <use href="#wcup" x="200" y="170"/>
+        <circle cx="211" cy="152" r="9" class="blu"/>
+        <path class="blu thin" d="M188 130 L182 118 M234 130 L240 118 M211 126 L211 112" opacity=".7"/>
+        <path class="bad" style="stroke:var(--blue)" d="M96 96 Q150 70 205 138"/>
+        <text x="220" y="200" class="mid smb">ball in the water cup</text>
+        <path class="hair" d="M380 132 L420 132"/>
+        <path class="redf" d="M426 132 l-10 5 l0 -10 Z"/>
+        <path class="ln" d="M470 170 L760 170"/>
+        <use href="#pyr6" x="660" y="170"/>
+        <circle cx="500" cy="112" r="13" class="ln"/>
+        <path class="ln thin" d="M492 101 Q500 112 492 123 M508 101 Q500 112 508 123"/>
+        <path class="dash" d="M518 114 Q590 96 648 128"/>
+        <use href="#racket" x="576" y="188"/>
+        <path class="red" d="M556 206 L596 166"/>
+        <text x="500" y="88" class="mid sm">tennis ball</text>
+        <text x="576" y="222" class="mid smr">cannot be blocked</text>
+      </svg>
+      <figcaption>The tennis throw ignores every restriction on an ordinary throw and cannot be answered. That is what makes the water cup worth defending — and why the ball sits a cup's width in front of your own pyramid, where every short bounce is aimed.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ========== 7 ========== -->
+  <section id="a7">
+    <h2 class="art"><span class="no">Article 7</span><span class="ti">Three cups or fewer</span></h2>
+    <p>When a team is knocked down to three cups or fewer, the game changes shape. This happens once per team per game, at the moment the threshold is crossed, and it is the attacking team that decides what happens.</p>
+    <div class="r"><span class="n">7.1</span><p>The attacking team is asked what it wants: the remaining cups rebuilt into a 2-1 pyramid — two side by side, one on top — or left standing exactly where they are. If it does not answer, the cups are rebuilt.</p></div>
+    <div class="r"><span class="n">7.2</span><p>If a 2-1 pyramid cannot be built from what is left, the cups keep their shape, but they are still pushed together until they touch and centred on the edge.</p></div>
+    <div class="r"><span class="n">7.3</span><p>The water cup moves, whether the cups were rebuilt or not. The attacking team places it anywhere it likes on that table and must move it at least a little — a centimetre is enough, but standing pat is not an option. A small pyramid shielded by a water cup is close to unhittable, which is the whole reason this rule exists.</p></div>
+    <div class="r"><span class="n">7.4</span><p>The threshold does not fire again. A team that drops from three cups to two, or that climbs back above three after a last stand (8.4), goes through none of this a second time.</p></div>
+
+    <figure>
+      <svg viewBox="0 0 800 270" role="img" aria-label="Left: three cups left standing in a row with the water cup in its original place. Right: the same cups rebuilt as a two-one pyramid, with the water cup moved far along the table.">
+        <path class="ln" d="M70 200 L350 200"/>
+        <use href="#cup" x="96" y="200"/>
+        <use href="#cup" x="166" y="200"/>
+        <use href="#cup" x="246" y="200"/>
+        <use href="#wcup" x="300" y="200"/>
+        <text x="200" y="230" class="mid sm">three cups left</text>
+        <path class="hair" d="M390 170 L430 170"/>
+        <path class="redf" d="M436 170 l-10 5 l0 -10 Z"/>
+        <path class="ln" d="M470 200 L780 200"/>
+        <use href="#pyr3" x="500" y="200"/>
+        <use href="#wcup" x="716" y="200"/>
+        <path class="ghost" d="M560 196 L560 176 Q640 152 712 176 L712 192"/>
+        <path class="redf" d="M712 198 l5 -10 l-10 0 Z" opacity=".8"/>
+        <text x="625" y="230" class="mid sm">rebuilt 2-1, water cup moved</text>
+        <text x="625" y="246" class="mid sm">by the attacking team</text>
+      </svg>
+      <figcaption>A rebuilt 2-1 pyramid is a smaller target but a much tidier one, and it loses its water-cup shield, so the attacking team weighs that against leaving three cups scattered across the edge. The water cup goes wherever the attackers want it — out of the way, or somewhere the defenders will have to be careful around.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ========== 8 ========== -->
+  <section id="a8">
+    <h2 class="art"><span class="no">Article 8</span><span class="ti">Winning: the last stand</span></h2>
+    <p>Losing your last cup does not lose you the game. It buys you exactly one turn.</p>
+    <div class="r"><span class="n">8.1</span><p>When a team loses its last cup, count the cups it had standing before that final turn — the same as the number that just fell. Call it <i>n</i>, usually one or two.</p></div>
+    <div class="r"><span class="n">8.2</span><p>The team with no cups left takes one turn: the last stand. It must knock over at least <i>n</i> cups from the team that just finished it off.</p></div>
+    <div class="r pen"><span class="n">8.3</span><p>If it knocks over fewer than <i>n</i>, the game is over. The team with cups left on the table wins.</p></div>
+    <div class="r"><span class="n">8.4</span><p>If it knocks over <i>n</i> or more, every cup it knocked over is removed from the opponent. The team coming back then puts up the smaller of two numbers: the cups it just knocked over, or <i>n</i>. Answering one cup with four restores one cup, not four — though all four still leave the opponent's table. Answering three with three restores three.</p></div>
+    <div class="r"><span class="n">8.5</span><p>A last stand is an ordinary turn in every other respect. Blockable throws can be slapped away, clean throws may not be touched, water cups can be made, fouls can be committed, tennis throws can be earned and used.</p></div>
+    <div class="r"><span class="n">8.6</span><p>A team that survives a last stand and is later emptied again gets another one, on the same terms. There is no limit.</p></div>
+    <div class="r"><span class="n">8.7</span><p>When the game ends, both teams shake hands, bow, and say <span class="say" lang="ko">감사합니다</span> — <i>gamsahamnida</i>, thank you.</p></div>
+
+    <figure>
+      <svg viewBox="0 0 800 300" role="img" aria-label="Three-panel sequence showing team A knocking down team B's last two cups, team B's last stand knocking two cups from A, and the resulting cup counts.">
+        <g>
+          <text x="40" y="34" class="lbl">1</text>
+          <text x="62" y="34" class="sm">A takes B's last two</text>
+          <text x="40" y="72" class="lbl">A</text>
+          <use href="#minicup" x="62" y="76"/><use href="#minicup" x="86" y="76"/><use href="#minicup" x="110" y="76"/><use href="#minicup" x="134" y="76"/>
+          <use href="#minicupX" x="158" y="76"/><use href="#minicupX" x="182" y="76"/>
+          <text x="40" y="120" class="lbl">B</text>
+          <use href="#minicupX" x="62" y="124"/><use href="#minicupX" x="86" y="124"/><use href="#minicupX" x="110" y="124"/><use href="#minicupX" x="134" y="124"/>
+          <use href="#minicupX" x="158" y="124"/><use href="#minicupX" x="182" y="124"/>
+          <g class="red"><path d="M159 120 L175 106 M159 106 L175 120"/><path d="M183 120 L199 106 M183 106 L199 120"/></g>
+          <text x="216" y="122" class="smr">n = 2</text>
+        </g>
+        <g transform="translate(0,160)">
+          <text x="40" y="34" class="lbl">2</text>
+          <text x="62" y="34" class="sm">B's last stand must take at least two from A</text>
+          <text x="40" y="72" class="lbl">A</text>
+          <use href="#minicup" x="62" y="76"/><use href="#minicup" x="86" y="76"/><use href="#minicup" x="110" y="76"/><use href="#minicup" x="134" y="76"/>
+          <path class="red" d="M152 68 L196 68"/>
+          <path class="redf" d="M202 68 l-10 5 l0 -10 Z"/>
+          <text x="210" y="72" class="smr">≥ 2 or the game ends</text>
+        </g>
+        <g transform="translate(440,0)">
+          <text x="0" y="34" class="lbl">3</text>
+          <text x="22" y="34" class="sm">B takes two — it survives</text>
+          <text x="0" y="72" class="lbl">A</text>
+          <use href="#minicup" x="22" y="76"/><use href="#minicup" x="46" y="76"/>
+          <use href="#minicupX" x="70" y="76"/><use href="#minicupX" x="94" y="76"/>
+          <use href="#minicupX" x="118" y="76"/><use href="#minicupX" x="142" y="76"/>
+          <text x="0" y="120" class="lbl">B</text>
+          <use href="#minicup" x="22" y="124"/><use href="#minicup" x="46" y="124"/>
+          <use href="#minicupX" x="70" y="124"/><use href="#minicupX" x="94" y="124"/>
+          <use href="#minicupX" x="118" y="124"/><use href="#minicupX" x="142" y="124"/>
+          <path class="blu" d="M30 140 Q56 164 82 142"/>
+          <text x="70" y="182" class="mid smb">two cups back up</text>
+          <text x="176" y="82" class="sm">A keeps two</text>
+        </g>
+        <path class="hair" d="M330 90 L400 90"/>
+        <path class="redf" d="M406 90 l-10 5 l0 -10 Z"/>
+      </svg>
+      <figcaption>A last stand can knock over more than <i>n</i> cups — the stacking rule of 3.9 makes that easy, and a tennis throw makes it likely. Every extra cup still leaves the opponent's table, but a comeback never puts back more than it lost in the turn that emptied it.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ========== 9 ========== -->
+  <section id="a9">
+    <h2 class="art"><span class="no">Article 9</span><span class="ti">The ref</span></h2>
+    <div class="r"><span class="n">9.1</span><p>KFS is fast and often chaotic. When it is unclear which rules apply after an exchange, the ref decides. The decision is made without debate and is final.</p></div>
+    <div class="r pen"><span class="n">9.2</span><p>A team that refuses to follow the ref's decision can expect one foul, and another, until it does.</p></div>
+    <div class="r"><span class="n">9.3</span><p>The ref may call fouls on illegal play, but should use this sparingly (5.4).</p></div>
+    <div class="r"><span class="n">9.4</span><p>The ref runs the opening countdown and holds the toy gun (2.2).</p></div>
+  </section>
+
+  <!-- ========== 10 ========== -->
+  <section id="a10">
+    <h2 class="art"><span class="no">Article 10</span><span class="ti">Respect</span></h2>
+    <div class="r"><span class="n">10.1</span><p>KFS is a game of respect before it is a game of cups. The bow and the handshake at both ends of the game are part of the rules, not a garnish.</p></div>
+    <div class="r pen"><span class="n">10.2</span><p>If a player or a team is repeatedly disrespectful toward the other team, the ref calls a foul on them. This is a normal and well-received call.</p></div>
+    <div class="r"><span class="n">10.3</span><p>Throwing on the gunshot, hard throws, and direct throws are competition, not disrespect. Opening a game you were handed with a direct throw is bad manners (2.5), and still not a foul.</p></div>
+  </section>
+
+  </main>
+</div>
+
+<footer>
+  <div class="fl">
+    <div>
+      <p style="margin:0">Cite an article number in a dispute. The ref decides the rest.</p>
+    </div>
+    <svg width="46" height="46" viewBox="0 0 64 64" aria-hidden="true" style="flex:0 0 auto"><use href="#taegeuk"/></svg>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>
